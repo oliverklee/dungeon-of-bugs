@@ -66,6 +66,8 @@ jobs:
 
     runs-on: ubuntu-22.04
 
+    needs: [ php-lint, composer-validate ]
+
     strategy:
       matrix:
         command:
@@ -105,6 +107,8 @@ jobs:
     name: PHPUnit Tests
 
     runs-on: ubuntu-22.04
+
+    needs: [ php-lint, composer-validate ]
 
     strategy:
       matrix:
