@@ -14,22 +14,22 @@
 	"homepage": "https://www.oliverklee.de/workshops/",
 	"support": {
 		"issues": "https://github.com/oliverklee/dungeon-of-bugs/issues",
-		"source": "https://github.com/oliverklee/dungeon-of-bugs",
-		"wiki": "https://github.com/oliverklee/dungeon-of-bugs/wiki"
+		"wiki": "https://github.com/oliverklee/dungeon-of-bugs/wiki",
+		"source": "https://github.com/oliverklee/dungeon-of-bugs"
 	},
 	"require": {
 		"php": "^8.1"
 	},
 	"require-dev": {
+		"ergebnis/composer-normalize": "^2.31.0",
 		"typo3/coding-standards": "^0.7.1"
 	},
 	"prefer-stable": true,
-	"autoload": {
-	},
-	"autoload-dev": {
-	},
+	"autoload": {},
+	"autoload-dev": {},
 	"config": {
 		"allow-plugins": {
+			"ergebnis/composer-normalize": true
 		},
 		"preferred-install": {
 			"*": "dist"
@@ -37,7 +37,23 @@
 		"sort-packages": true
 	},
 	"scripts": {
+		"ci": [
+			"@ci:static"
+		],
+		"ci:composer:normalize": "@composer normalize --dry-run",
+		"ci:static": [
+			"@ci:composer:normalize"
+		],
+		"fix": [
+			"@fix:composer"
+		],
+		"fix:composer": "@composer normalize"
 	},
 	"scripts-descriptions": {
+		"ci": "Runs all dynamic and static code checks.",
+		"ci:composer:normalize": "Checks the composer.json.",
+		"ci:static": "Runs all static code checks (syntax, style, types).",
+		"fix": "Runs all automatic code style fixes.",
+		"fix:composer": "Normalizes all composer.json files."
 	}
 }
