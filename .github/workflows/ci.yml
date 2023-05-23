@@ -72,6 +72,7 @@ jobs:
       matrix:
         command:
           - composer:normalize
+          - php:fixer
         php-version:
           - "8.1"
 
