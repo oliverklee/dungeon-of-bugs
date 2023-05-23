@@ -20,7 +20,9 @@
     "require": {
         "php": "^8.1"
     },
-    "require-dev": {},
+    "require-dev": {
+        "typo3/coding-standards": "^0.7.1"
+    },
     "prefer-stable": true,
     "autoload": {
     },
