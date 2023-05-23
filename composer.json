@@ -51,8 +51,10 @@
 			"@ci:tests:all"
 		],
 		"ci:composer:normalize": "@composer normalize --dry-run",
+		"ci:php:lint": "find .*.php src tests -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l",
 		"ci:static": [
-			"@ci:composer:normalize"
+			"@ci:composer:normalize",
+			"@ci:php:lint"
 		],
 		"ci:tests:all": "phpunit --testsuite all",
 		"ci:tests:functional": "phpunit --testsuite functional",
@@ -65,6 +67,7 @@
 	"scripts-descriptions": {
 		"ci": "Runs all dynamic and static code checks.",
 		"ci:composer:normalize": "Checks the composer.json.",
+		"ci:php:lint": "Lints the PHP files for syntax errors.",
 		"ci:static": "Runs all static code checks (syntax, style, types).",
 		"ci:tests:all": "Runs all PHPUnit tests (unit and functional).",
 		"ci:tests:functional": "Runs the functional tests.",

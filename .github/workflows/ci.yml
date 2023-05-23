@@ -33,6 +33,34 @@ jobs:
       - name: Validate the root composer.json
         run: composer validate
 
+  php-lint:
+    name: PHP Lint
+
+    runs-on: ubuntu-22.04
+
+    strategy:
+      matrix:
+        php-version:
+          - "8.1"
+          - "8.2"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          coverage: none
+          tools: composer:v2
+
+      - name: Show the Composer configuration
+        run: composer config --global --list
+
+      - name: Lint all own PHP files
+        run: composer ci:php:lint
+
   static-analysis:
     name: Static Analysis
 
