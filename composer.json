@@ -1,7 +1,7 @@
 {
 	"name": "oliverklee/dungeon-of-bugs",
 	"description": "A console-based dungeon crawler game which I use in my TDD workshops.",
-	"license": "GPL-3.0-or-later",
+	"license": "MIT",
 	"type": "project",
 	"authors": [
 		{
