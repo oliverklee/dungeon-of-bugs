@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Unit;
+namespace OliverKlee\DungeonOfBugs\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 
