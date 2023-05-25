@@ -29,6 +29,7 @@
 		"phpstan/phpstan-phpunit": "^1.3.12",
 		"phpstan/phpstan-strict-rules": "^1.5.1",
 		"phpunit/phpunit": "^10.1.3",
+		"symfony/yaml": "^6.2.10",
 		"typo3/coding-standards": "^0.7.1"
 	},
 	"prefer-stable": true,
@@ -68,11 +69,13 @@
 		"ci:php:stan": "phpstan --no-progress",
 		"ci:static": [
 			"@ci:composer:normalize",
-			"@ci:php"
+			"@ci:php",
+			"@ci:yaml:lint"
 		],
 		"ci:tests:all": "phpunit --testsuite all",
 		"ci:tests:functional": "phpunit --testsuite functional",
 		"ci:tests:unit": "phpunit --testsuite unit",
+		"ci:yaml:lint": "find . ! -path 'vendor/*' -regextype egrep -regex '.*.ya?ml$' | xargs -r php ./vendor/bin/yaml-lint",
 		"fix": [
 			"@fix:composer",
 			"@fix:php"
@@ -97,6 +100,7 @@
 		"ci:tests:all": "Runs all PHPUnit tests (unit and functional).",
 		"ci:tests:functional": "Runs the functional tests.",
 		"ci:tests:unit": "Runs the unit tests.",
+		"ci:yaml:lint": "Lints the YAML files.",
 		"fix": "Runs all automatic code style fixes.",
 		"fix:composer": "Normalizes all composer.json files.",
 		"fix:php": "Runs all automatic code style fixes for PHP.",

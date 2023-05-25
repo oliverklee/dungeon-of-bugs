@@ -74,6 +74,7 @@ jobs:
           - composer:normalize
           - php:fixer
           - php:stan
+          - yaml:lint
         php-version:
           - "8.1"
 
