@@ -50,3 +50,22 @@ This example is for running the testcase
 |------------------------------------|-----------------------------------------------------|
 | direct PHPUnit call with local PHP | `vendor/bin/phpunit tests/Unit/PlaceholderTest.php` |
 | direct PHPUnit call with DDEV      | `ddev exec phpunit tests/Unit/PlaceholderTest.php`  |
+
+### In PHPStorm
+
+First, you need to configure the PHP interpreter in PHPStorm:
+
+- [local interpreter](https://www.jetbrains.com/help/phpstorm/configuring-local-interpreter.html)
+- [remote interpreter with DDEV](https://ddev.readthedocs.io/en/latest/users/install/phpstorm/)
+
+After this, configure PHPUnit:
+
+1. enter the PhpStorm settings
+2. PHP > Test Frameworks
+3. add a new PHPUnit configuration
+4. in "PHPUnit library",
+   select "Use Composer autoloader" and set `vendor/autoload.php` as path
+5. in "Test Runner",
+   select "Default configuration file" and set `phpunit.xml` as path to script
+
+Now you can right-click on a testcase or a directory and select "Run".
