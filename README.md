@@ -11,6 +11,20 @@ You'll need one of these:
 - local PHP 8.1+ and Composer 2
 - Docker and [DDEV](https://github.com/ddev/ddev)
 
+## Running the game
+
+With local PHP:
+
+```bash
+bin/dungeon-of-bugs
+```
+
+With DDEV:
+
+```bash
+ddev exec dungeon-of-bugs
+```
+
 ## Running the PHPUnit tests
 
 ### On the command line
@@ -69,3 +83,7 @@ After this, configure PHPUnit:
    select "Default configuration file" and set `phpunit.xml` as path to script
 
 Now you can right-click on a testcase or a directory and select "Run".
+
+## Credits
+
+Part of the code has been copied from the Snake Console game by @dbu.
