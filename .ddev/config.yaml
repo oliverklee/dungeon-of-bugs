@@ -3,8 +3,8 @@ type: php
 docroot: ""
 php_version: "8.1"
 webserver_type: nginx-fpm
-router_http_port: "80"
-router_https_port: "443"
+router_http_port: "8080"
+router_https_port: "8081"
 xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: []
