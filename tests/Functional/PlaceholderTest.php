@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Functional;
+namespace OliverKlee\DungeonOfBugs\Tests\Functional;
 
 use PHPUnit\Framework\TestCase;
 
