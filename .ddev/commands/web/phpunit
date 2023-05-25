@@ -1,0 +1,9 @@
+#!/bin/bash
+
+## Description: Runs PHPUnit
+## Usage: phpunit <arguments>
+## Example: "ddev phpunit --testsuite all"
+
+cd /var/www/html
+
+vendor/bin/phpunit $@
