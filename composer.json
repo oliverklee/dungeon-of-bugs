@@ -59,7 +59,12 @@
 			"@ci:static",
 			"@ci:tests:all"
 		],
+		"ci:composer": [
+			"@ci:composer:normalize",
+			"@ci:composer:psr-verify"
+		],
 		"ci:composer:normalize": "@composer normalize --dry-run",
+		"ci:composer:psr-verify": "@composer dumpautoload --optimize --strict-psr",
 		"ci:php": [
 			"@ci:php:fixer",
 			"@ci:php:lint",
@@ -71,7 +76,7 @@
 		"ci:php:sniff": "phpcs src tests",
 		"ci:php:stan": "phpstan --no-progress",
 		"ci:static": [
-			"@ci:composer:normalize",
+			"@ci:composer",
 			"@ci:php",
 			"@ci:yaml:lint"
 		],
@@ -94,7 +99,9 @@
 	},
 	"scripts-descriptions": {
 		"ci": "Runs all dynamic and static code checks.",
+		"ci:composer": "Runs all Composer-related static checks.",
 		"ci:composer:normalize": "Checks the composer.json.",
+		"ci:composer:psr-verify": "Verifies PSR-4 namespace correctness.",
 		"ci:php": "Runs all static checks for PHP files.",
 		"ci:php:fixer": "Checks the code style with the PHP Coding Standards Fixer (PHP-CS-Fixer).",
 		"ci:php:lint": "Lints the PHP files for syntax errors.",
