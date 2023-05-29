@@ -2,6 +2,7 @@
 
 | Emoji | Meaning                        |
 |-------|--------------------------------|
+|       | (normal ground)                |
 | 🧱    | wall                           |
 | 🪲    | bug                            |
 | ☕     | coffee                         |
@@ -11,5 +12,4 @@
 | ⬇️    | stairs down                    |
 | 💀    | dead player                    |
 | 🧑    | player (alive)                 |
-| 😻    | destination                    |
-|       | (normal ground)                |
+| 😻    | goal                           |
