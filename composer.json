@@ -69,7 +69,7 @@
 		"ci:php": [
 			"@ci:php:fixer",
 			"@ci:php:lint",
-			"@ci:php:snif",
+			"@ci:php:sniff",
 			"@ci:php:stan"
 		],
 		"ci:php:fixer": "php-cs-fixer fix --dry-run -v --show-progress=dots",
