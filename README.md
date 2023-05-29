@@ -16,7 +16,7 @@ You'll need one of these:
 With local PHP:
 
 ```bash
-bin/dungeon-of-bugs
+bin/dungeon-of-bugs <path-to-level-file>
 ```
 
 With DDEV:
