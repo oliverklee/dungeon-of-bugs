@@ -7,6 +7,7 @@ namespace OliverKlee\DungeonOfBugs\Command;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Cursor;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\StreamableInputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -20,6 +21,7 @@ class RunGameCommand extends Command
     protected function configure(): void
     {
         $this->setDescription('Run the snake game in Symfony console');
+        $this->addArgument('levelfile', InputArgument::OPTIONAL, 'The path to the level file.', 'levels/level-01.txt');
     }
 
     /**
@@ -41,6 +43,7 @@ class RunGameCommand extends Command
         $cursor->hide();
 
         $output->writeln('Hello World!');
+        $output->writeln('Level to load: ' . $input->getArgument('levelfile'));
 
         $cursor->show();
         \stream_set_blocking($inputStream, true);

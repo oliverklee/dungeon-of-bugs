@@ -5,6 +5,7 @@ declare(strict_types=1);
 
 use OliverKlee\DungeonOfBugs\Command\RunGameCommand;
 use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\ArrayInput;
 
 if (!\in_array(PHP_SAPI, ['cli', 'phpdbg', 'embed'], true)) {
     echo 'Warning: The console should be invoked via the CLI version of PHP, not the ' . PHP_SAPI . " SAPI\n";
@@ -20,6 +21,13 @@ if (!\class_exists(Application::class)) {
 
 $application = new Application('Dungeon of Bugs');
 $snakeCommand = new RunGameCommand();
+$levelFilePath = $_SERVER['argv'][1] ?? null;
+if (\is_string($levelFilePath)) {
+    $input = new ArrayInput(['levelfile' => $levelFilePath]);
+} else {
+    $input = null;
+}
+
 $application->add($snakeCommand);
 $application->setDefaultCommand($snakeCommand->getName(), true);
-$application->run();
+$application->run($input);
