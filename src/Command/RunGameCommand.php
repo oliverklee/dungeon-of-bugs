@@ -22,7 +22,7 @@ class RunGameCommand extends Command
     protected function configure(): void
     {
         $this->setDescription('Run the snake game in Symfony console');
-        $this->addArgument('levelfile', InputArgument::OPTIONAL, 'The path to the level file.', 'levels/level-01.txt');
+        $this->addArgument('mapfile', InputArgument::OPTIONAL, 'The path to the map file.', 'maps/map-01.txt');
     }
 
     /**
@@ -36,8 +36,8 @@ class RunGameCommand extends Command
             $inputStream = STDIN;
         }
 
-        $levelFile = $input->getArgument('levelfile');
-        \assert(\is_string($levelFile));
+        $mapFile = $input->getArgument('mapfile');
+        \assert(\is_string($mapFile));
 
         \stream_set_blocking($inputStream, false);
         $sttyMode = \shell_exec('stty -g');
@@ -49,10 +49,10 @@ class RunGameCommand extends Command
 
         $cursor->moveToPosition(1, 1);
         $output->writeln('Hello World!');
-        $output->writeln('Level to load: ' . $levelFile);
+        $output->writeln('Map to load: ' . $mapFile);
 
         $gameBuilder = new GameBuilder();
-        $world = $gameBuilder->loadGameWorld($levelFile);
+        $world = $gameBuilder->loadGameWorld($mapFile);
         $game = $gameBuilder->buildGame($world, $input, $output);
         $cursor->moveToPosition(1, 10);
 
