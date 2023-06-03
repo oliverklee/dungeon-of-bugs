@@ -10,7 +10,6 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Cursor;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\StreamableInputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -30,17 +29,12 @@ class RunGameCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        if ($input instanceof StreamableInputInterface && \is_resource($input->getStream())) {
-            $inputStream = $input->getStream();
-        } else {
-            $inputStream = STDIN;
-        }
-
         $mapFile = $input->getArgument('mapfile');
         \assert(\is_string($mapFile));
 
-        \stream_set_blocking($inputStream, false);
-        $sttyMode = \shell_exec('stty -g');
+        // back up terminal settings
+        $sttyModeBackup = \shell_exec('stty -g');
+        // disable keyboard echo
         \shell_exec('stty -icanon -echo');
 
         $cursor = new Cursor($output);
@@ -50,21 +44,28 @@ class RunGameCommand extends Command
         $cursor->moveToPosition(1, 1);
         $output->writeln('Hello World!');
         $output->writeln('Map to load: ' . $mapFile);
+        $output->writeln('Press ESC to exit.');
 
         $gameBuilder = new GameBuilder();
         $world = $gameBuilder->loadGameWorld($mapFile);
         $game = $gameBuilder->buildGame($world, $input, $output);
         $cursor->moveToPosition(1, 10);
 
+        $stdin = \fopen('php://stdin', 'rb');
+        \assert(\is_resource($stdin));
+        $output->writeln('Here we will see the game world.');
+        $output->writeln('It will have multiple lines');
+
         do {
-            $output->writeln('Here we will see the game world.');
-            $output->writeln('It will have multiple lines');
-            // copy key input handling from https://github.com/dbu/php-snake/blob/main/src/Game/Game.php
-        } while ($game->isRunning());
+            $character = fread($stdin, 1);
+            \assert(\is_string($character));
+            $output->writeln('You pressed "' . $character . '" with ASCII code: ' . ord($character));
+        } while ($character !== chr(27));
 
         $cursor->show();
-        \stream_set_blocking($inputStream, true);
-        \shell_exec(sprintf('stty %s', $sttyMode));
+
+        // restore terminal settings
+        \shell_exec(sprintf('stty %s', $sttyModeBackup));
 
         return Command::SUCCESS;
     }
