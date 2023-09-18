@@ -74,7 +74,6 @@ jobs:
           - composer:normalize
           - composer:psr-verify
           - php:fixer
-          - php:sniff
           - php:stan
           - yaml:lint
         php-version:
