@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6cfeba8785a5e0b8b7d8430e7b474619",
+    "content-hash": "9946273064728d6c5cc2743cf449e073",
     "packages": [
         {
             "name": "psr/container",
@@ -2379,16 +2379,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.5.8",
+            "version": "10.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "08f4fa74d5fbfff1ef22abffee47aaedcaea227e"
+                "reference": "0bd663704f0165c9e76fe4f06ffa6a1ca727fdbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/08f4fa74d5fbfff1ef22abffee47aaedcaea227e",
-                "reference": "08f4fa74d5fbfff1ef22abffee47aaedcaea227e",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/0bd663704f0165c9e76fe4f06ffa6a1ca727fdbe",
+                "reference": "0bd663704f0165c9e76fe4f06ffa6a1ca727fdbe",
                 "shasum": ""
             },
             "require": {
@@ -2460,7 +2460,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.8"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.9"
             },
             "funding": [
                 {
@@ -2476,7 +2476,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-01-19T07:07:27+00:00"
+            "time": "2024-01-22T14:35:40+00:00"
         },
         {
             "name": "psr/event-dispatcher",
