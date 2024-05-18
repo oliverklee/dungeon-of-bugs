@@ -18,7 +18,7 @@
 		"source": "https://github.com/oliverklee/dungeon-of-bugs"
 	},
 	"require": {
-		"php": "^8.1",
+		"php": "^8.2",
 		"symfony/console": "^6.4.7"
 	},
 	"require-dev": {
