@@ -6,10 +6,6 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    assignees:
-      - "oliverklee"
-    reviewers:
-      - "oliverklee"
     open-pull-requests-limit: 10
 
   - package-ecosystem: "composer"
@@ -17,8 +13,4 @@ updates:
     schedule:
       interval: "daily"
     versioning-strategy: "increase"
-    assignees:
-      - "oliverklee"
-    reviewers:
-      - "oliverklee"
     open-pull-requests-limit: 10
