@@ -8,7 +8,7 @@ It also is an exercise for my workshops on test-driven development (PHP).
 
 You'll need one of these:
 
-- local PHP 8.1+ and Composer 2
+- local PHP 8.3+ and Composer 2
 - Docker and [DDEV](https://github.com/ddev/ddev)
 
 ## Running the game
