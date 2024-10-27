@@ -30,7 +30,7 @@
 		"phpstan/phpstan-phpunit": "^1.4.0",
 		"phpstan/phpstan-strict-rules": "^1.6.1",
 		"phpunit/phpunit": "^11.4.2",
-		"symfony/yaml": "^7.1.5",
+		"symfony/yaml": "^7.1.6",
 		"typo3/coding-standards": "^0.8.0"
 	},
 	"prefer-stable": true,
