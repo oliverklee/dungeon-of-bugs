@@ -11,9 +11,3 @@ parameters:
 			identifier: staticMethod.alreadyNarrowedType
 			count: 1
 			path: tests/Unit/PlaceholderTest.php
-
-		-
-			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertInstanceOf\(\) with ''OliverKlee\\\\DungeonOfBugs\\\\FieldInterface'' and OliverKlee\\DungeonOfBugs\\FieldInterface will always evaluate to true\.$#'
-			identifier: staticMethod.alreadyNarrowedType
-			count: 1
-			path: tests/Unit/WallTest.php
