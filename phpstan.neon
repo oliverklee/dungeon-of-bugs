@@ -3,6 +3,8 @@ includes:
     - phpstan-baseline.neon
 
 parameters:
+  phpVersion: 80300
+
   level: 10
 
   paths:
