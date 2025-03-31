@@ -19,7 +19,7 @@
 	},
 	"require": {
 		"php": "^8.3",
-		"symfony/console": "^7.2.1"
+		"symfony/console": "^7.2.5"
 	},
 	"require-dev": {
 		"ergebnis/composer-normalize": "^2.45.0",
