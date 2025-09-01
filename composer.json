@@ -22,7 +22,7 @@
 		"symfony/console": "^7.3.3"
 	},
 	"require-dev": {
-		"ergebnis/composer-normalize": "^2.47.0",
+		"ergebnis/composer-normalize": "^2.48.1",
 		"friendsofphp/php-cs-fixer": "^3.86.0",
 		"phpstan/extension-installer": "^1.4.3",
 		"phpstan/phpstan": "^2.1.22",
