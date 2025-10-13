@@ -1,7 +1,7 @@
 parameters:
 	ignoreErrors:
 		-
-			rawMessage: 'Parameter #2 of function sprintf is expected to be __stringandstringable by placeholder #1 ("%%s"), string|false|null given.'
+			rawMessage: 'Parameter #2 of function sprintf is expected to be string by placeholder #1 ("%%s"), string|false|null given.'
 			identifier: argument.type
 			count: 1
 			path: src/Command/RunGameCommand.php
