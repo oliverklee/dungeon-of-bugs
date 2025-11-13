@@ -40,13 +40,13 @@ class Game
         $this->clearAndMoveToTopLeft();
         $this->output->writeln(
             <<<TEXT
-Welcome to Dungeon of Bugs!
+                Welcome to Dungeon of Bugs!
 
-Use W, A, S, D to navigate through the map.
-Use X to exit the game.
+                Use W, A, S, D to navigate through the map.
+                Use X to exit the game.
 
-Press any key to start
-TEXT
+                Press any key to start
+                TEXT,
         );
     }
 

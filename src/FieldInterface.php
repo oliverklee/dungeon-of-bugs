@@ -7,5 +7,6 @@ namespace OliverKlee\DungeonOfBugs;
 interface FieldInterface
 {
     public function isPassable(): bool;
+
     public function getEmoji(): string;
 }
