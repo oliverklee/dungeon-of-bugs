@@ -13,9 +13,9 @@
 	],
 	"homepage": "https://www.oliverklee.de/workshops/",
 	"support": {
-		"issues": "https://github.com/oliverklee/dungeon-of-bugs/issues",
-		"wiki": "https://github.com/oliverklee/dungeon-of-bugs/wiki",
-		"source": "https://github.com/oliverklee/dungeon-of-bugs"
+		"issues": "https://github.com/oliverklee-de/dungeon-of-bugs/issues",
+		"wiki": "https://github.com/oliverklee-de/dungeon-of-bugs/wiki",
+		"source": "https://github.com/oliverklee-de/dungeon-of-bugs"
 	},
 	"require": {
 		"php": "^8.3",
