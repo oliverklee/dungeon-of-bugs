@@ -33,27 +33,27 @@ ddev exec dungeon-of-bugs
 
 | Description                        | Command                              |
 |------------------------------------|--------------------------------------|
-| Composer script with local PHP     | `composer ci:tests:all`              |
+| Composer script with local PHP     | `composer check:tests:all`           |
 | direct PHPUnit call with local PHP | `vendor/bin/phpunit --testsuite all` |
-| Composer script with DDEV          | `ddev composer ci:tests:all`         |
+| Composer script with DDEV          | `ddev composer check:tests:all`      |
 | direct PHPUnit call with DDEV      | `ddev exec phpunit --testsuite all`  |
 
 #### Running only the unit tests
 
 | Description                        | Command                               |
 |------------------------------------|---------------------------------------|
-| Composer script with local PHP     | `composer ci:tests:unit`              |
+| Composer script with local PHP     | `composer check:tests:unit`           |
 | direct PHPUnit call with local PHP | `vendor/bin/phpunit --testsuite unit` |
-| Composer script with DDEV          | `ddev composer ci:tests:unit`         |
+| Composer script with DDEV          | `ddev composer check:tests:unit`      |
 | direct PHPUnit call with DDEV      | `ddev exec phpunit --testsuite unit`  |
 
 #### Running only the functional tests
 
 | Description                        | Command                                     |
 |------------------------------------|---------------------------------------------|
-| Composer script with local PHP     | `composer ci:tests:functional`              |
+| Composer script with local PHP     | `composer check:tests:functional`           |
 | direct PHPUnit call with local PHP | `vendor/bin/phpunit --testsuite functional` |
-| Composer script with DDEV          | `ddev composer ci:tests:functional`         |
+| Composer script with DDEV          | `ddev composer check:tests:functional`      |
 | direct PHPUnit call with DDEV      | `ddev exec phpunit --testsuite functional`  |
 
 #### Running a single testcase
