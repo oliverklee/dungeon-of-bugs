@@ -56,33 +56,33 @@
 		"sort-packages": true
 	},
 	"scripts": {
-		"ci": [
-			"@ci:static",
-			"@ci:tests:all"
+		"check": [
+			"@check:static",
+			"@check:tests:all"
 		],
-		"ci:composer": [
-			"@ci:composer:normalize",
-			"@ci:composer:psr-verify"
+		"check:composer": [
+			"@check:composer:normalize",
+			"@check:composer:psr-verify"
 		],
-		"ci:composer:normalize": "@composer normalize --dry-run",
-		"ci:composer:psr-verify": "@composer dumpautoload --optimize --strict-psr",
-		"ci:php": [
-			"@ci:php:fixer",
-			"@ci:php:lint",
-			"@ci:php:stan"
+		"check:composer:normalize": "@composer normalize --dry-run",
+		"check:composer:psr-verify": "@composer dumpautoload --optimize --strict-psr",
+		"check:php": [
+			"@check:php:fixer",
+			"@check:php:lint",
+			"@check:php:stan"
 		],
-		"ci:php:fixer": "php-cs-fixer fix --dry-run -v --show-progress=dots",
-		"ci:php:lint": "find .*.php src tests -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l",
-		"ci:php:stan": "phpstan --no-progress",
-		"ci:static": [
-			"@ci:composer",
-			"@ci:php",
-			"@ci:yaml:lint"
+		"check:php:fixer": "php-cs-fixer fix --dry-run -v --show-progress=dots",
+		"check:php:lint": "find .*.php src tests -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l",
+		"check:php:stan": "phpstan --no-progress",
+		"check:static": [
+			"@check:composer",
+			"@check:php",
+			"@check:yaml:lint"
 		],
-		"ci:tests:all": "phpunit --testsuite all",
-		"ci:tests:functional": "phpunit --testsuite functional",
-		"ci:tests:unit": "phpunit --testsuite unit",
-		"ci:yaml:lint": "find . ! -path 'vendor/*' -regextype egrep -regex '.*.ya?ml$' | xargs -r php ./vendor/bin/yaml-lint",
+		"check:tests:all": "phpunit --testsuite all",
+		"check:tests:functional": "phpunit --testsuite functional",
+		"check:tests:unit": "phpunit --testsuite unit",
+		"check:yaml:lint": "find . ! -path 'vendor/*' -regextype egrep -regex '.*.ya?ml$' | xargs -r php ./vendor/bin/yaml-lint",
 		"fix": [
 			"@fix:composer",
 			"@fix:php"
@@ -95,19 +95,19 @@
 		"phpstan:baseline": "phpstan --generate-baseline=phpstan-baseline.neon --allow-empty-baseline"
 	},
 	"scripts-descriptions": {
-		"ci": "Runs all dynamic and static code checks.",
-		"ci:composer": "Runs all Composer-related static checks.",
-		"ci:composer:normalize": "Checks the composer.json.",
-		"ci:composer:psr-verify": "Verifies PSR-4 namespace correctness.",
-		"ci:php": "Runs all static checks for PHP files.",
-		"ci:php:fixer": "Checks the code style with the PHP Coding Standards Fixer (PHP-CS-Fixer).",
-		"ci:php:lint": "Lints the PHP files for syntax errors.",
-		"ci:php:stan": "Checks the PHP types using PHPStan.",
-		"ci:static": "Runs all static code checks (syntax, style, types).",
-		"ci:tests:all": "Runs all PHPUnit tests (unit and functional).",
-		"ci:tests:functional": "Runs the functional tests.",
-		"ci:tests:unit": "Runs the unit tests.",
-		"ci:yaml:lint": "Lints the YAML files.",
+		"check": "Runs all dynamic and static code checks.",
+		"check:composer": "Runs all Composer-related static checks.",
+		"check:composer:normalize": "Checks the composer.json.",
+		"check:composer:psr-verify": "Verifies PSR-4 namespace correctness.",
+		"check:php": "Runs all static checks for PHP files.",
+		"check:php:fixer": "Checks the code style with the PHP Coding Standards Fixer (PHP-CS-Fixer).",
+		"check:php:lint": "Lints the PHP files for syntax errors.",
+		"check:php:stan": "Checks the PHP types using PHPStan.",
+		"check:static": "Runs all static code checks (syntax, style, types).",
+		"check:tests:all": "Runs all PHPUnit tests (unit and functional).",
+		"check:tests:functional": "Runs the functional tests.",
+		"check:tests:unit": "Runs the unit tests.",
+		"check:yaml:lint": "Lints the YAML files.",
 		"fix": "Runs all automatic code style fixes.",
 		"fix:composer": "Normalizes all composer.json files.",
 		"fix:php": "Runs all fixers for the PHP code.",

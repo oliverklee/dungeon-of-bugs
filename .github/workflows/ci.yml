@@ -60,7 +60,7 @@ jobs:
         run: composer config --global --list
 
       - name: Lint all own PHP files
-        run: composer ci:php:lint
+        run: composer check:php:lint
 
   static-analysis:
     name: Static Analysis
@@ -107,7 +107,7 @@ jobs:
         run: composer install --no-progress
 
       - name: Run Command
-        run: composer ci:${{ matrix.command }}
+        run: composer check:${{ matrix.command }}
 
   tests:
     name: PHPUnit Tests
@@ -148,4 +148,4 @@ jobs:
         run: composer install --no-progress
 
       - name: Run the tests
-        run: composer ci:tests:all
+        run: composer check:tests:all
